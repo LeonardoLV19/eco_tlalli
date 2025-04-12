@@ -1,7 +1,36 @@
+'use client'
+import React from "react";
 import InputBox from "@/components/Input/inputBox";
+import Question from "@/components/Question/Question";
+import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
 
 export default function Home() {
   return <div>
     <InputBox />
+    <Question
+        question="¿Qué medio de transporte usás a diario?"
+        options={[
+          { label: "Auto", carbonValue: 50 },
+          { label: "Bicicleta", carbonValue: 0 },
+          { label: "Bus", carbonValue: 20 },
+        ]}
+        type="single"
+        onChange={(value) => {
+          console.log("Huella seleccionada:", value);
+        }}
+      />
+      {/* Segunda pregunta (variante multiple / checkbox) */}
+      <Question
+        question="¿Qué electrodomésticos usás en casa?"
+        options={[
+          { label: "Aire acondicionado", carbonValue: 30 },
+          { label: "Lavarropas", carbonValue: 15 },
+          { label: "Microondas", carbonValue: 10 },
+          { label: "Televisor", carbonValue: 5 },
+        ]}
+        type="multiple"
+        onChange={(value) => console.log("Huella electrodomésticos:", value)}
+      />
+      <SavingsDistribution />
   </div>
 }
