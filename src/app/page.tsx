@@ -3,6 +3,7 @@ import React from "react";
 import InputBox from "@/components/Input/inputBox";
 import Question from "@/components/Question/Question";
 import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
+import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
 
 export default function Home() {
   return <div>
@@ -32,5 +33,6 @@ export default function Home() {
         onChange={(value) => console.log("Huella electrodomésticos:", value)}
       />
       <SavingsDistribution />
+      <ReceiptButton />
   </div>
 }
