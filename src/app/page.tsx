@@ -4,6 +4,7 @@ import InputBox from "@/components/Input/inputBox";
 import Question from "@/components/Question/Question";
 import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
 import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
+import SavingsStatistics from "@/components/SavingsStatistics/SavingsStatistics";
 
 export default function Home() {
   return <div>
@@ -34,5 +35,6 @@ export default function Home() {
       />
       <SavingsDistribution />
       <ReceiptButton />
+      <SavingsStatistics />
   </div>
 }
