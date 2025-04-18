@@ -5,6 +5,7 @@ import Question from "@/components/Question/Question";
 import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
 import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
 import SavingsStatistics from "@/components/SavingsStatistics/SavingsStatistics";
+import CarbonFootprintScore from "@/components/CarbonFootprintScore/CarbonFootprintScore";
 
 export default function Home() {
   return <div>
@@ -36,5 +37,6 @@ export default function Home() {
       <SavingsDistribution />
       <ReceiptButton />
       <SavingsStatistics />
+      <CarbonFootprintScore />
   </div>
 }
