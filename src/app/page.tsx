@@ -8,6 +8,7 @@ import SavingsStatistics from "@/components/SavingsStatistics/SavingsStatistics"
 import CarbonFootprintScore from "@/components/CarbonFootprintScore/CarbonFootprintScore";
 import CatalogFilter from "@/components/CatalogFilter/CatalogFilter";
 import FacilityCards from "@/components/FacilityCards/FacilityCards";
+import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
 
 export default function Home() {
   return <div>
@@ -42,5 +43,6 @@ export default function Home() {
       <CarbonFootprintScore />
       <CatalogFilter />
       <FacilityCards />
+      <CarbonFootprintRadialChart />
   </div>
 }
