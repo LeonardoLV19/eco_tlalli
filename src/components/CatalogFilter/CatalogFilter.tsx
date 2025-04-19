@@ -7,12 +7,16 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 1250 }}>
+    <Box sx={{ width: '100%', maxWidth: 1250, mx: 'auto' }}>
       <BottomNavigation
         showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
+        }}
+        sx={{
+          width: '100%',
+          bgcolor: 'background.paper',
         }}
       >
         <BottomNavigationAction
