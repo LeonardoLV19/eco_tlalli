@@ -9,6 +9,7 @@ import CarbonFootprintScore from "@/components/CarbonFootprintScore/CarbonFootpr
 import CatalogFilter from "@/components/CatalogFilter/CatalogFilter";
 import FacilityCards from "@/components/FacilityCards/FacilityCards";
 import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
+import GaugeChart from "@/components/GaugeChart/GaugeChart";
 
 export default function Home() {
   return <div>
@@ -44,5 +45,6 @@ export default function Home() {
       <CatalogFilter />
       <FacilityCards />
       <CarbonFootprintRadialChart />
+      <GaugeChart />
   </div>
 }
