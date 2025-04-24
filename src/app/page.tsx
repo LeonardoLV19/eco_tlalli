@@ -10,6 +10,7 @@ import CatalogFilter from "@/components/CatalogFilter/CatalogFilter";
 import FacilityCards from "@/components/FacilityCards/FacilityCards";
 import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
 import GaugeChart from "@/components/GaugeChart/GaugeChart";
+import CardPerCapita from "@/components/CardPerCapita/CardPerCapita";
 
 export default function Home() {
   return <div>
@@ -46,5 +47,16 @@ export default function Home() {
       <FacilityCards />
       <CarbonFootprintRadialChart />
       <GaugeChart />
+      <CardPerCapita
+        title="TcO al año per cápita en el mundo"
+        subtitle="4.83 toneladas al año por habitante"
+        image="/mexico.png"
+      />
+
+      <CardPerCapita
+        title="TcO al año per cápita en América"
+        subtitle="7.48 toneladas al año por habitante"
+        image="/mundo.png"
+      />
   </div>
 }
