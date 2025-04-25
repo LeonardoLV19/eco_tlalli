@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "use client";
 
 import { Input } from "../ui/input";
@@ -32,3 +33,5 @@ const InputBox = () => {
 };
 
 export default InputBox;
+=======
+>>>>>>> Stashed changes
