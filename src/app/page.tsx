@@ -15,10 +15,12 @@ import { CardSales } from "@/components/CardSales/CardSales";
 import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
 import { InfoBox } from "@/components/InfoBox/InfoBox";
 import SalesTable from "@/components/SalesTable/SalesTable";
+import InputBox from "@/components/Input/inputBox";
 
 
 export default function Home() {
   return <div>
+    <InputBox/>
     <Question
         question="¿Qué medio de transporte usás a diario?"
         options={[
