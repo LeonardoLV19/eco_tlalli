@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import InputBox from "@/components/Input/inputBox";
 import Question from "@/components/Question/Question";
 import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
 import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
@@ -11,10 +10,15 @@ import FacilityCards from "@/components/FacilityCards/FacilityCards";
 import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
 import GaugeChart from "@/components/GaugeChart/GaugeChart";
 import CardPerCapita from "@/components/CardPerCapita/CardPerCapita";
+import { ProductCard, ProductCardVariant } from "@/components/ProductCard/ProductCard";
+import { CardSales } from "@/components/CardSales/CardSales";
+import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
+import { InfoBox } from "@/components/InfoBox/InfoBox";
+import SalesTable from "@/components/SalesTable/SalesTable";
+
 
 export default function Home() {
   return <div>
-    <InputBox />
     <Question
         question="¿Qué medio de transporte usás a diario?"
         options={[
@@ -58,5 +62,16 @@ export default function Home() {
         subtitle="7.48 toneladas al año por habitante"
         image="/mundo.png"
       />
+
+      <ProductCard/>
+      <ProductCardVariant/>
+      <CardSales/>
+      <ShippingCard/>
+      <InfoBox variant="sellers" />
+      <InfoBox variant="store" />  
+      <InfoBox variant="requests" />  
+      <InfoBox variant="logs" />    
+      <SalesTable/> 
+
   </div>
 }
