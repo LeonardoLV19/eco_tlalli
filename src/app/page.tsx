@@ -2,7 +2,6 @@
 import React from "react";
 import Question from "@/components/Question/Question";
 import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
-<<<<<<< Updated upstream
 import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
 import SavingsStatistics from "@/components/SavingsStatistics/SavingsStatistics";
 import CarbonFootprintScore from "@/components/CarbonFootprintScore/CarbonFootprintScore";
@@ -11,13 +10,12 @@ import FacilityCards from "@/components/FacilityCards/FacilityCards";
 import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
 import GaugeChart from "@/components/GaugeChart/GaugeChart";
 import CardPerCapita from "@/components/CardPerCapita/CardPerCapita";
-=======
 import { ProductCard, ProductCardVariant } from "@/components/ProductCard/ProductCard";
 import { CardSales } from "@/components/CardSales/CardSales";
 import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
 import { InfoBox } from "@/components/InfoBox/InfoBox";
 import SalesTable from "@/components/SalesTable/SalesTable";
->>>>>>> Stashed changes
+
 
 export default function Home() {
   return <div>
@@ -46,7 +44,6 @@ export default function Home() {
         onChange={(value) => console.log("Huella electrodomésticos:", value)}
       />
       <SavingsDistribution />
-<<<<<<< Updated upstream
       <ReceiptButton />
       <SavingsStatistics />
       <CarbonFootprintScore />
@@ -65,7 +62,7 @@ export default function Home() {
         subtitle="7.48 toneladas al año por habitante"
         image="/mundo.png"
       />
-=======
+
       <ProductCard/>
       <ProductCardVariant/>
       <CardSales/>
@@ -76,9 +73,5 @@ export default function Home() {
       <InfoBox variant="logs" />    
       <SalesTable/> 
 
-
-
-      
->>>>>>> Stashed changes
   </div>
 }
