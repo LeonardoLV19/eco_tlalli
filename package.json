@@ -11,15 +11,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-<<<<<<< Updated upstream
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "@mui/x-charts": "^8.0.0",
-=======
     "@radix-ui/react-checkbox": "^1.1.5",
->>>>>>> Stashed changes
     "@radix-ui/react-slot": "^1.2.0",
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
