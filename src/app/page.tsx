@@ -45,6 +45,14 @@ import MetricaHuellaDeCarbonoV4 from "@/components/MetricaHuellaDeCarbono/Metric
 import TablaCotizacionV1 from "@/components/TablaCotizacion/TablaCotizacionV1";
 import TablaCotizacionV2 from "@/components/TablaCotizacion/TablaCotizacionV2";
 import TarjetaVentasVistaVendedor from "@/components/TarjetaVentasVistaVendededor/TarjetaVentasVistaVendedor";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
+import SpendingResume from "@/components/SpendingResume/SpendingResume";
+import ProductDetails from "@/components/ProductDetails/ProductDetails";
+import QuoteHistoryCard from "@/components/QuoteHistoryCard/QuoteHistoryCard";
+import AdministratorTables from "@/components/AdministratorTables/AdministratorTables";
+import InteractiveCard from "@/components/InteractiveCard/InteractiveCard";
+import ProdCards from "@/components/ProdCards/ProdCards";
+
 
 export default function Home() {
   return (
@@ -132,6 +140,45 @@ export default function Home() {
         <ResumenCard />
         <PaginationCard />
         <GaugeChart value={72} value2="Alta" />
+        <ActionAreaCard/>
+        <ResumenCard/>
+        <PaginationCard/>
+        <ProdCards 
+          variant="buyer"
+          imageSrc="/solar_panel.jpg"
+          price="$52,272 MXN"
+          title="Elios Terra G8 | Ground Mount System For 8 Solar Panel"
+          rating={1}
+        />
+        <ProdCards variant="add" />
+        <ProdCards 
+          variant="seller"
+          imageSrc="/solar_panel.jpg"
+          price="$46,093 MXN"
+          title="Panel Solar para casa 900 watts completo, Panel Solar"
+          rating={2}
+        />
+        <ProgressBar currentStep={1} steps={[
+          "Consumo energético del hogar",
+          "Transporte",
+          "Alimentación",
+          "Hábitos de consumo y residuos",
+        ]} />
+        <SpendingResume />
+        <ProductDetails />
+        <QuoteHistoryCard 
+          price={"82,272 MXN"} 
+          date={"30 de Marzo de 2025"} 
+          energyCurrent={100} 
+          energyWithProduct={400} 
+          moneyCurrent={2000} 
+          moneyWithProduct={10000} 
+        />
+        <AdministratorTables />
+        <InteractiveCard />
+        <GaugeChart 
+        value={72}
+        value2="Alta"/>
       </div>
       <div className="flex flex-col gap-4 p-4">
         RICARDO
