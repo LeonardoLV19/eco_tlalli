@@ -46,7 +46,7 @@ export function Component() {
       <CardContent className="flex flex-1 items-center pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square w-full max-w-[250px]"
+          className="mx-auto w-[300px] h-[300px] border"
         >
           <RadialBarChart
             data={chartData}

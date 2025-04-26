@@ -119,4 +119,12 @@ export default function Home() {
       <GaugeChart value={72} value2="Alta" />
     </div>
   );
+<ActionAreaCard/>
+      <ResumenCard/>
+      <PaginationCard/>
+      <GaugeChart 
+      value={72}
+      value2="Alta"/>
+  </div>
+
 }
