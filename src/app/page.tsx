@@ -64,7 +64,7 @@ export default function Home() {
       <CatalogFilter />
       <FacilityCards />
       <CarbonFootprintRadialChart />
-      <GaugeChart />
+      {/* <GaugeChart /> */}
       <TabBar role="cliente" />
       <TabBar role="vendedor" />
       <TabBar role="admin" />
@@ -113,6 +113,8 @@ export default function Home() {
       <ActionAreaCard/>
       <ResumenCard/>
       <PaginationCard/>
-
+      <GaugeChart 
+      value={72}
+      value2="Alta"/>
   </div>
 }

@@ -7,6 +7,11 @@ import {
 } from '@mui/x-charts/Gauge';
 import { Typography, Box } from '@mui/material';
 
+type Props = {
+  value: number;
+  value2: string;
+};
+
 function GaugePointer() {
   const { valueAngle, outerRadius, cx, cy } = useGaugeState();
 
@@ -27,18 +32,22 @@ function GaugePointer() {
   );
 }
 
-export default function CompositionExample() {
-  const value = 72;
-
+export default function CompositionExample({ value, value2 }: Props) {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-        <Box sx={{ ml: 20, textAlign: 'left' }}>
-      <Typography variant="subtitle2" color="#BF190E" fontWeight="bold" textAlign={"end"} fontSize={14}>
-        Atención
-      </Typography>
-      <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }} fontSize={14}>
-        Tu huella de carbono es alta
-      </Typography>
+      <Box sx={{ ml: 20, textAlign: 'left' }}>
+        <Typography
+          variant="subtitle2"
+          color="#BF190E"
+          fontWeight="bold"
+          textAlign="end"
+          fontSize={14}
+        >
+          Atención
+        </Typography>
+        <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }} fontSize={14}>
+          Tu huella de carbono es {value2}
+        </Typography>
       </Box>
 
       <GaugeContainer
@@ -47,7 +56,7 @@ export default function CompositionExample() {
         startAngle={-110}
         endAngle={110}
         value={value}
-        sx={{ mt: -3}}
+        sx={{ mt: -3 }}
       >
         <GaugeReferenceArc />
         <GaugeValueArc color="red" />
