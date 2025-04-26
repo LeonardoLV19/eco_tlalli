@@ -27,10 +27,12 @@ import Pill from "@/components/Pill/Pill";
 import ActionAreaCard from "@/components/region/Region";
 import ResumenCard from "@/components/resumen/Resumen";
 import PaginationCard from "@/components/selector/selector";
+import InputBox from "@/components/Input/inputBox";
 
 
 export default function Home() {
   return <div>
+    <InputBox/>
     <Question
         question="¿Qué medio de transporte usás a diario?"
         options={[
