@@ -67,7 +67,7 @@ export function Component() {
       <CardContent className="flex justify-center pb-0">
         <ChartContainer
           config={chartConfig}
-          className="aspect-square max-h-[250px] w-full max-w-[500px]"
+          className="w-[900px] h-[400px] border"
         >
           <RadialBarChart
             data={chartData}
