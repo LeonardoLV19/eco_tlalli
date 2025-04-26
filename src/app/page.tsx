@@ -15,6 +15,18 @@ import { CardSales } from "@/components/CardSales/CardSales";
 import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
 import { InfoBox } from "@/components/InfoBox/InfoBox";
 import SalesTable from "@/components/SalesTable/SalesTable";
+import TabBar from "@/components/TabBar/TabBar";
+import SpendingByCategory from "@/components/SpendingByCategoryChart/SpendingByCat";
+import DoubleButtons from "@/components/DoubleButtons/DoubleButtons";
+import ShoppingHistory from "@/components/ShoppingHistory/ShoppingHistory";
+import OrderCard from "@/components/OrderCard/OrderCard";
+import DeliveryCard from "@/components/DeliveryCard/DeliveryCard";
+import EnergyChartCard from "@/components/consumo/Consumo";
+import  EnergyLineChartCard from "@/components/gasto/Gasto";
+import Pill from "@/components/Pill/Pill";
+import ActionAreaCard from "@/components/region/Region";
+import ResumenCard from "@/components/resumen/Resumen";
+import PaginationCard from "@/components/selector/selector";
 import InputBox from "@/components/Input/inputBox";
 
 
@@ -53,6 +65,22 @@ export default function Home() {
       <FacilityCards />
       <CarbonFootprintRadialChart />
       <GaugeChart />
+      <TabBar role="cliente" />
+      <TabBar role="vendedor" />
+      <TabBar role="admin" />
+      <SpendingByCategory />
+      <DoubleButtons />
+      <div className="flex items-center justify-center">
+        <ShoppingHistory
+          price="$52,272"
+          title="Elios Terra G8 | Ground Mount System For 8 Solar Panel"
+          date="30 de Marzo de 2025"
+          imageUrl="/paneles.png"
+          width={700}
+        />
+      </div>
+      <OrderCard />
+      <DeliveryCard />
       <CardPerCapita
         title="TcO al año per cápita en el mundo"
         subtitle="4.83 toneladas al año por habitante"
@@ -74,6 +102,17 @@ export default function Home() {
       <InfoBox variant="requests" />  
       <InfoBox variant="logs" />    
       <SalesTable/> 
+      <EnergyChartCard/> 
+      <EnergyLineChartCard/>
+      <div className="flex flex-col gap-4 p-4">
+      <Pill text="Volver" color="volver" />
+      <Pill text="Añadir" color="añadir" />
+      <Pill text="Personalizada" color="personalizada" />
+      <Pill text="Continuar" color="continue" />
+      </div>
+      <ActionAreaCard/>
+      <ResumenCard/>
+      <PaginationCard/>
 
   </div>
 }

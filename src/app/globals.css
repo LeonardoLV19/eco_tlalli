@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+.albert-card {
+  font-family: 'Albert Sans', sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
