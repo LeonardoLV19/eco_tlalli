@@ -1,13 +1,8 @@
 import React from "react";
 
-interface PopUpV3Props {
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-
-const PopUpV3: React.FC<PopUpV3Props> = ({ onConfirm, onCancel }) => {
+const PopUpV3 = () => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className=" flex justify-center items-center z-50">
       <div className="bg-white rounded-lg p-6 w-11/12 max-w-md text-center shadow-lg">
         <div className="flex flex-col items-center mb-4">
           <img
@@ -27,16 +22,10 @@ const PopUpV3: React.FC<PopUpV3Props> = ({ onConfirm, onCancel }) => {
           ¿Estás seguro de que deseas continuar?
         </p>
         <div className="flex justify-around mt-6">
-          <button
-            className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
-            onClick={onConfirm}
-          >
+          <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
             Confirmar
           </button>
-          <button
-            className="border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 transition"
-            onClick={onCancel}
-          >
+          <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 transition">
             Cancelar
           </button>
         </div>
