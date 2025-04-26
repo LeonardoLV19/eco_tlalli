@@ -28,6 +28,13 @@ import ActionAreaCard from "@/components/region/Region";
 import ResumenCard from "@/components/resumen/Resumen";
 import PaginationCard from "@/components/selector/selector";
 import InputBox from "@/components/Input/inputBox";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
+import SpendingResume from "@/components/SpendingResume/SpendingResume";
+import ProductDetails from "@/components/ProductDetails/ProductDetails";
+import QuoteHistoryCard from "@/components/QuoteHistoryCard/QuoteHistoryCard";
+import AdministratorTables from "@/components/AdministratorTables/AdministratorTables";
+import InteractiveCard from "@/components/InteractiveCard/InteractiveCard";
+import ProdCards from "@/components/ProdCards/ProdCards";
 
 
 export default function Home() {
@@ -113,6 +120,39 @@ export default function Home() {
       <ActionAreaCard/>
       <ResumenCard/>
       <PaginationCard/>
+      <ProdCards 
+        variant="buyer"
+        imageSrc="/solar_panel.jpg"
+        price="$52,272 MXN"
+        title="Elios Terra G8 | Ground Mount System For 8 Solar Panel"
+        rating={1}
+      />
+      <ProdCards variant="add" />
+      <ProdCards 
+        variant="seller"
+        imageSrc="/solar_panel.jpg"
+        price="$46,093 MXN"
+        title="Panel Solar para casa 900 watts completo, Panel Solar"
+        rating={2}
+      />
+      <ProgressBar currentStep={1} steps={[
+        "Consumo energético del hogar",
+        "Transporte",
+        "Alimentación",
+        "Hábitos de consumo y residuos",
+      ]} />
+      <SpendingResume />
+      <ProductDetails />
+      <QuoteHistoryCard 
+        price={"82,272 MXN"} 
+        date={"30 de Marzo de 2025"} 
+        energyCurrent={100} 
+        energyWithProduct={400} 
+        moneyCurrent={2000} 
+        moneyWithProduct={10000} 
+      />
+      <AdministratorTables />
+      <InteractiveCard />
       <GaugeChart 
       value={72}
       value2="Alta"/>
