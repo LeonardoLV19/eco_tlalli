@@ -15,6 +15,12 @@ import { CardSales } from "@/components/CardSales/CardSales";
 import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
 import { InfoBox } from "@/components/InfoBox/InfoBox";
 import SalesTable from "@/components/SalesTable/SalesTable";
+import EnergyChartCard from "@/components/consumo/Consumo";
+import  EnergyLineChartCard from "@/components/gasto/Gasto";
+import Pill from "@/components/Pill/Pill";
+import ActionAreaCard from "@/components/region/Region";
+import ResumenCard from "@/components/resumen/Resumen";
+import PaginationCard from "@/components/selector/selector";
 
 
 export default function Home() {
@@ -72,6 +78,17 @@ export default function Home() {
       <InfoBox variant="requests" />  
       <InfoBox variant="logs" />    
       <SalesTable/> 
+      <EnergyChartCard/> 
+      <EnergyLineChartCard/>
+      <div className="flex flex-col gap-4 p-4">
+      <Pill text="Volver" color="volver" />
+      <Pill text="Añadir" color="añadir" />
+      <Pill text="Personalizada" color="personalizada" />
+      <Pill text="Continuar" color="continue" />
+      </div>
+      <ActionAreaCard/>
+      <ResumenCard/>
+      <PaginationCard/>
 
   </div>
 }
