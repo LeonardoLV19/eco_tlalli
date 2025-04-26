@@ -31,20 +31,6 @@ import ActionAreaCard from "@/components/region/Region";
 import ResumenCard from "@/components/resumen/Resumen";
 import PaginationCard from "@/components/selector/selector";
 import InputBox from "@/components/Input/inputBox";
-import PopUpV1 from "@/components/PopUp/PopUpV1";
-import PopUpV2 from "@/components/PopUp/PopUpV2";
-import PopUpV3 from "@/components/PopUp/PopUpV3";
-import PopUpV4 from "@/components/PopUp/PopUpV4";
-import RegistrationOptions from "@/components/PopUp/RegistrationOptions";
-import Notifications from "@/components/PopUp/Notifications";
-import ConsumoPorEstado from "@/components/ConsumoPorEstado/ConsumoPorEstado";
-import MetricaHuellaDeCarbonoV2 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV2";
-import MetricaHuellaDeCarbono from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbono";
-import MetricaHuellaDeCarbonoV3 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV3";
-import MetricaHuellaDeCarbonoV4 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV4";
-import TablaCotizacionV1 from "@/components/TablaCotizacion/TablaCotizacionV1";
-import TablaCotizacionV2 from "@/components/TablaCotizacion/TablaCotizacionV2";
-import TarjetaVentasVistaVendedor from "@/components/TarjetaVentasVistaVendededor/TarjetaVentasVistaVendedor";
 
 export default function Home() {
   return (
@@ -81,7 +67,7 @@ export default function Home() {
       <CatalogFilter />
       <FacilityCards />
       <CarbonFootprintRadialChart />
-      <GaugeChart />
+      {/* <GaugeChart /> */}
       <TabBar role="cliente" />
       <TabBar role="vendedor" />
       <TabBar role="admin" />
@@ -130,23 +116,7 @@ export default function Home() {
       <ActionAreaCard />
       <ResumenCard />
       <PaginationCard />
-      <div className="flex flex-col gap-4 p-4">
-        RICARDO
-        <ConsumoPorEstado />
-        <MetricaHuellaDeCarbono />
-        <MetricaHuellaDeCarbonoV2 />
-        <MetricaHuellaDeCarbonoV3 />
-        <MetricaHuellaDeCarbonoV4 />
-        <PopUpV1 />
-        <PopUpV2 />
-        <PopUpV3 />
-        <PopUpV4 />
-        <RegistrationOptions />
-        <Notifications />
-        <TablaCotizacionV1 />
-        <TablaCotizacionV2 />
-        <TarjetaVentasVistaVendedor />
-      </div>
+      <GaugeChart value={72} value2="Alta" />
     </div>
   );
 }
