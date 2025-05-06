@@ -5,6 +5,7 @@ import Image from 'next/image'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import PersonIcon from '@mui/icons-material/Person'
+import Link from 'next/link';
 
 type Role = 'cliente' | 'vendedor' | 'admin'
 
@@ -33,7 +34,9 @@ const TabBar = ({ role }: TabBarProps) => {
   const icons = {
     cliente: [
       <ShoppingCartIcon key="cart" sx={{ fontSize: 30, color: '#5DAF5D' }} />,
-      <PersonIcon key="user" sx={{ fontSize: 30, color: '#5DAF5D' }} />
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 30, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
     ],
     vendedor: [
       <NotificationsIcon key="bell" sx={{ fontSize: 30, color: '#5DAF5D' }} />,
