@@ -1,202 +1,44 @@
 "use client";
 import React from "react";
-import Question from "@/components/Question/Question";
-import { SavingsDistribution } from "@/components/SavingsCard/SavingsCard";
-import { ReceiptButton } from "@/components/ReceiptButton/receiptButton";
-import SavingsStatistics from "@/components/SavingsStatistics/SavingsStatistics";
-import CarbonFootprintScore from "@/components/CarbonFootprintScore/CarbonFootprintScore";
-import CatalogFilter from "@/components/CatalogFilter/CatalogFilter";
-import FacilityCards from "@/components/FacilityCards/FacilityCards";
-import CarbonFootprintRadialChart from "@/components/CarbonFootprintRadialChart/CarbonFootprintRadialChart";
-import GaugeChart from "@/components/GaugeChart/GaugeChart";
-import CardPerCapita from "@/components/CardPerCapita/CardPerCapita";
-import {
-  ProductCard,
-  ProductCardVariant,
-} from "@/components/ProductCard/ProductCard";
-import { CardSales } from "@/components/CardSales/CardSales";
-import { ShippingCard } from "@/components/ShippingCard/ShippingCard";
-import { InfoBox } from "@/components/InfoBox/InfoBox";
-import SalesTable from "@/components/SalesTable/SalesTable";
-import TabBar from "@/components/TabBar/TabBar";
-import SpendingByCategory from "@/components/SpendingByCategoryChart/SpendingByCat";
-import DoubleButtons from "@/components/DoubleButtons/DoubleButtons";
-import ShoppingHistory from "@/components/ShoppingHistory/ShoppingHistory";
-import OrderCard from "@/components/OrderCard/OrderCard";
-import DeliveryCard from "@/components/DeliveryCard/DeliveryCard";
-import EnergyChartCard from "@/components/consumo/Consumo";
-import EnergyLineChartCard from "@/components/gasto/Gasto";
 import Pill from "@/components/Pill/Pill";
-import ActionAreaCard from "@/components/region/Region";
-import ResumenCard from "@/components/resumen/Resumen";
-import PaginationCard from "@/components/selector/selector";
-import InputBox from "@/components/Input/inputBox";
-import PopUpV1 from "@/components/PopUp/PopUpV1";
-import PopUpV2 from "@/components/PopUp/PopUpV2";
-import PopUpV3 from "@/components/PopUp/PopUpV3";
-import PopUpV4 from "@/components/PopUp/PopUpV4";
-import RegistrationOptions from "@/components/PopUp/RegistrationOptions";
-import Notifications from "@/components/PopUp/Notifications";
-import ConsumoPorEstado from "@/components/ConsumoPorEstado/ConsumoPorEstado";
-import MetricaHuellaDeCarbonoV2 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV2";
-import MetricaHuellaDeCarbono from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbono";
-import MetricaHuellaDeCarbonoV3 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV3";
-import MetricaHuellaDeCarbonoV4 from "@/components/MetricaHuellaDeCarbono/MetricaHuellaDeCarbonoV4";
-import TablaCotizacionV1 from "@/components/TablaCotizacion/TablaCotizacionV1";
-import TablaCotizacionV2 from "@/components/TablaCotizacion/TablaCotizacionV2";
-import TarjetaVentasVistaVendedor from "@/components/TarjetaVentasVistaVendededor/TarjetaVentasVistaVendedor";
-import ProgressBar from "@/components/ProgressBar/ProgressBar";
-import SpendingResume from "@/components/SpendingResume/SpendingResume";
-import ProductDetails from "@/components/ProductDetails/ProductDetails";
-import QuoteHistoryCard from "@/components/QuoteHistoryCard/QuoteHistoryCard";
-import AdministratorTables from "@/components/AdministratorTables/AdministratorTables";
-import InteractiveCard from "@/components/InteractiveCard/InteractiveCard";
-import ProdCards from "@/components/ProdCards/ProdCards";
-
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <div>
-        <InputBox />
-        <Question
-          question="¿Qué medio de transporte usás a diario?"
-          options={[
-            { label: "Auto", carbonValue: 50 },
-            { label: "Bicicleta", carbonValue: 0 },
-            { label: "Bus", carbonValue: 20 },
-          ]}
-          type="single"
-          onChange={(value) => {
-            console.log("Huella seleccionada:", value);
-          }}
-        />
-        {/* Segunda pregunta (variante multiple / checkbox) */}
-        <Question
-          question="¿Qué electrodomésticos usás en casa?"
-          options={[
-            { label: "Aire acondicionado", carbonValue: 30 },
-            { label: "Lavarropas", carbonValue: 15 },
-            { label: "Microondas", carbonValue: 10 },
-            { label: "Televisor", carbonValue: 5 },
-          ]}
-          type="multiple"
-          onChange={(value) => console.log("Huella electrodomésticos:", value)}
-        />
-        <SavingsDistribution />
-        <ReceiptButton />
-        <SavingsStatistics />
-        <CarbonFootprintScore />
-        <CatalogFilter />
-        <FacilityCards />
-        <CarbonFootprintRadialChart />
-        {/* <GaugeChart /> */}
-        <TabBar role="cliente" />
-        <TabBar role="vendedor" />
-        <TabBar role="admin" />
-        <SpendingByCategory />
-        <DoubleButtons />
-        <div className="flex items-center justify-center">
-          <ShoppingHistory
-            price="$52,272"
-            title="Elios Terra G8 | Ground Mount System For 8 Solar Panel"
-            date="30 de Marzo de 2025"
-            imageUrl="/paneles.png"
-            width={700}
+    <div className="relative px-6 md:px-20 pt-1 pb-35 bg-white overflow-hidden">
+      {/* Plantas decorativas flotantes */}
+      <Image
+        src="/Background.png"
+        alt="Decoración plantas"
+        width={1000}
+        height={1}
+        className="absolute bottom-0 left-0"
+      />
+
+      {/* Contenido principal */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-x-20 h-full">
+        {/* Columna de texto */}
+        <div className="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            ¿Quiénes <br className="hidden md:block" /> Somos?
+          </h1>
+          <p className="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
+            En EcoTlalli, creemos en un futuro más verde y sostenible. Nuestra misión es ayudar a las personas a reducir su huella de carbono y transformar sus hogares en espacios más eficientes y amigables con el planeta. A través de tecnología inteligente y soluciones accesibles, hacemos que la sustentabilidad sea fácil y alcanzable para todos.
+          </p>
+          <Pill text="Calcula tu huella de carbono!" color="personalizada" />
+        </div>
+
+        {/* Imagen principal */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          <Image
+            src="/HomePage1.png"
+            alt="Ilustración Eco"
+            width={500}
+            height={500}
+            className="max-w-full h-auto"
           />
         </div>
-        <OrderCard />
-        <DeliveryCard />
-        <CardPerCapita
-          title="TcO al año per cápita en el mundo"
-          subtitle="4.83 toneladas al año por habitante"
-          image="/mexico.png"
-        />
-
-        <CardPerCapita
-          title="TcO al año per cápita en América"
-          subtitle="7.48 toneladas al año por habitante"
-          image="/mundo.png"
-        />
-
-        <ProductCard />
-        <ProductCardVariant />
-        <CardSales />
-        <ShippingCard />
-        <InfoBox variant="sellers" />
-        <InfoBox variant="store" />
-        <InfoBox variant="requests" />
-        <InfoBox variant="logs" />
-        <SalesTable />
-        <EnergyChartCard />
-        <EnergyLineChartCard />
-        <div className="flex flex-col gap-4 p-4">
-          <Pill text="Volver" color="volver" />
-          <Pill text="Añadir" color="añadir" />
-          <Pill text="Personalizada" color="personalizada" />
-          <Pill text="Continuar" color="continue" />
-        </div>
-        <ActionAreaCard />
-        <ResumenCard />
-        <PaginationCard />
-        <GaugeChart value={72} value2="Alta" />
-        <ActionAreaCard/>
-        <ResumenCard/>
-        <PaginationCard/>
-        <ProdCards 
-          variant="buyer"
-          imageSrc="/solar_panel.jpg"
-          price="$52,272 MXN"
-          title="Elios Terra G8 | Ground Mount System For 8 Solar Panel"
-          rating={1}
-        />
-        <ProdCards variant="add" />
-        <ProdCards 
-          variant="seller"
-          imageSrc="/solar_panel.jpg"
-          price="$46,093 MXN"
-          title="Panel Solar para casa 900 watts completo, Panel Solar"
-          rating={2}
-        />
-        <ProgressBar currentStep={1} steps={[
-          "Consumo energético del hogar",
-          "Transporte",
-          "Alimentación",
-          "Hábitos de consumo y residuos",
-        ]} />
-        <SpendingResume />
-        <ProductDetails />
-        <QuoteHistoryCard 
-          price={"82,272 MXN"} 
-          date={"30 de Marzo de 2025"} 
-          energyCurrent={100} 
-          energyWithProduct={400} 
-          moneyCurrent={2000} 
-          moneyWithProduct={10000} 
-        />
-        <AdministratorTables />
-        <InteractiveCard />
-        <GaugeChart 
-        value={72}
-        value2="Alta"/>
       </div>
-      <div className="flex flex-col gap-4 p-4">
-        RICARDO
-        <ConsumoPorEstado />
-        <MetricaHuellaDeCarbono />
-        <MetricaHuellaDeCarbonoV2 />
-        <MetricaHuellaDeCarbonoV3 />
-        <MetricaHuellaDeCarbonoV4 />
-        <PopUpV1 />
-        <PopUpV2 />
-        <PopUpV3 />
-        <PopUpV4 />
-        <RegistrationOptions />
-        <Notifications />
-        <TablaCotizacionV1 />
-        <TablaCotizacionV2 />
-        <TarjetaVentasVistaVendedor />
-      </div>
-    </>
+    </div>
   );
 }
