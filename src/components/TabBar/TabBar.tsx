@@ -53,8 +53,8 @@ const TabBar = ({ role }: TabBarProps) => {
 
         {/* Logo y Nombre */}
         <div className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="EcoTlalli logo" width={60} height={60} />
-          <span className="font-extrabold text-3xl text-[#1E1E1E]">EcoTlalli</span>
+          <Image src="/logo.png" alt="EcoTlalli logo" width={40} height={40} />
+          <span className="font-extrabold text-2xl text-[#1E1E1E]">EcoTlalli</span>
         </div>
 
         {/* Navegación (no reactiva, solo visual) */}
