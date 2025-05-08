@@ -2,6 +2,7 @@
 import React from "react";
 import Pill from "@/components/Pill/Pill";
 import Image from "next/image";
+import TabBar from "@/components/TabBar/TabBar";
 
 export default function Home() {
   return (

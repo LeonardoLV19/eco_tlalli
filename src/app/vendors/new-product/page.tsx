@@ -14,8 +14,11 @@ export default function RegisterProduct() {
     }
   };
 
-  const handleCancelRegisterProduct = () => {
-    router.push("/vendors"); // Redirige al formulario de registro de productos
+  const handleCancelRegisterProduct = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault(); // Previene el envío del formulario
+    router.push("/vendors"); // Redirige a la página de vendors
   };
 
   return (
