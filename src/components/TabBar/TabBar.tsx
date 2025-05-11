@@ -6,6 +6,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import PersonIcon from '@mui/icons-material/Person'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 type Role = 'cliente' | 'vendedor' | 'admin'
 
@@ -16,6 +17,7 @@ interface TabBarProps {
 const TabBar = ({ role }: TabBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -81,18 +83,18 @@ const TabBar = ({ role }: TabBarProps) => {
 
   const navItems = {
     cliente: [
-      { label: 'Inicio'},
-      { label: 'Cotizar' },
-      { label: 'Acerca de' },
-      { label: 'Tienda' }
+      { label: 'Inicio', href:'/', match: '/'},
+      { label: 'Cotizar', href:'', match: ''},
+      { label: 'Acerca de', href:'', match: ''},
+      { label: 'Tienda', href:'', match: '' }
     ],
     vendedor: [
-      { label: 'Mis productos'},
-      { label: 'Consultar ventas' }
+      { label: 'Mis productos', href:'', match: ''},
+      { label: 'Consultar ventas', href:'', match: ''}
     ],
     admin: [
-      { label: 'Vendedores'},
-      { label: 'Instalaciones' }
+      { label: 'Vendedores', href:'/validationSystem-admin', match: '/validationSystem-admin'},
+      { label: 'Instalaciones', href:'', match: ''}
     ]
   }
 
@@ -109,19 +111,19 @@ const TabBar = ({ role }: TabBarProps) => {
         {/* Navegación */}
         <nav className="flex flex-wrap gap-x-6 gap-y-2 items-center text-sm sm:text-base font-medium justify-center">
           {navItems[role].map((item, i) => (
-            <span
+            <Link
               key={i}
+              href={item.href}
               className={`cursor-pointer ${
-                item.active
+                pathname === item.match
                   ? 'text-[#3E873E] font-semibold'
                   : 'text-black hover:text-[#3E873E]'
               }`}
             >
               {item.label}
-            </span>
+            </Link>
           ))}
         </nav>
-
         {/* Íconos */}
         <div className="flex space-x-6 items-center">
           {icons[role]}
