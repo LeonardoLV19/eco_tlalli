@@ -21,7 +21,8 @@ const QuoteHistoryCard: React.FC<QuoteHistoryCardProps> = ({
     const moneySaved = moneyWithProduct - moneyCurrent;
 
     return (
-        <div className='bg-white rounded-2xl shadow-md items-center p-6 flex flex-col md:flex-row justify-between gap-8 w-full max-w-full'>
+        <div className='bg-white rounded-2xl shadow-2xl items-center p-6 flex flex-col md:flex-row justify-between gap-8 w-full max-w-8xl mx-auto'>
+
             <div className='flex flex-col justify-start min-w-[200px]'>
                 <p className='text-green-700 font-bold text-xl'>{price}</p>
                 <p className='text-black font-semibold mt-2 text-sm'>

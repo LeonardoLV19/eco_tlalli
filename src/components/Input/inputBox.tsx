@@ -5,7 +5,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import type { ReactNode } from "react";
 
 type InputBoxProps = {
-  labelText?: string;
+  labelText?: string | null;
   placeholder?: string;
   icon?: ReactNode | null;
 };

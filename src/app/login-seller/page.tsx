@@ -5,7 +5,7 @@ import Link from 'next/link';
 import InputBox from "@/components/Input/inputBox";
 import Pill from "@/components/Pill/Pill";
 
-const LogInCustomer = () => {
+const LogInSeller = () => {
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div className="bg-[#D9D9D94F] p-10 rounded-2xl shadow-md w-full max-w-md">
@@ -35,7 +35,7 @@ const LogInCustomer = () => {
 
                 <p className="text-center text-sm text-gray-600">
                     ¿No tienes cuenta?{' '}
-                    <Link href="/signup-customer" className="text-green-600 font-semibold hover:underline">
+                    <Link href="/signup-seller" className="text-green-600 font-semibold hover:underline">
                         Regístrate
                     </Link>
                 </p>
@@ -44,4 +44,4 @@ const LogInCustomer = () => {
     );
 }
 
-export default LogInCustomer;
+export default LogInSeller;
