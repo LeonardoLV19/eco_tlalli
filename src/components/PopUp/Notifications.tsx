@@ -1,6 +1,8 @@
 import React from "react";
-import notificationIcon from "@/components/assets/notification-icon.png"; // Ruta de la imagen
+// import notificationIcon from "@/components/assets/notification-icon.png"; // Ruta de la imagen
 // Ruta del ícono de check
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Notifications = () => {
   const notifications = [
@@ -21,10 +23,9 @@ const Notifications = () => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 w-11/12 max-w-lg border">
       <h2 className="text-lg font-semibold mb-4 flex items-center">
-        <img
-          src="/src/components/assets/campana_notif 1.png"
-          alt="Notificaciones"
-          className="w-6 h-6 mr-2"
+        <NotificationsIcon
+          sx={{ color: '#5DAF5D', fontSize: 24 }}
+          className="mr-2"
         />
         Notificaciones
       </h2>
@@ -32,10 +33,9 @@ const Notifications = () => {
         {notifications.map((notification, index) => (
           <div key={index} className="py-4">
             <div className="flex items-center mb-2">
-              <img
-                src={"/src/components/assets/campana_notif 1.png"}
-                alt="Check"
-                className="w-6 h-6 mr-2"
+              <CheckCircleIcon
+                sx={{ color: '#5DAF5D', fontSize: 20 }}
+                className="mr-2"
               />
               <h3 className="font-medium">{notification.title}</h3>
             </div>
