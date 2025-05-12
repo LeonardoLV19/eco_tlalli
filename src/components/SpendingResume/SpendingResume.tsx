@@ -73,4 +73,5 @@ const SpendingResume: React.FC = () => {
   );
 };
 
+
 export default SpendingResume;
