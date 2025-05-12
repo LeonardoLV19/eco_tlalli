@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import TabBarWrapper from "@/components/TabBar/TabBarWrapper";
+import TabBar from "@/components/TabBar/TabBar";
 
 export const metadata: Metadata = {
   title: "EcoTlalli",
@@ -9,13 +10,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="es">
-      <body className="antialiased">
-        <TabBarWrapper />
+    <html lang="en">
+      <body
+        className={`antialiased`}
+      >
+        <TabBar role="admin" />
         {children}
       </body>
     </html>
