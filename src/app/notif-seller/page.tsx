@@ -22,10 +22,13 @@ export default function NotifSeller({ role }: Props) {
 
             {role === 'vendedor' && showNotif && (
                 <div
-                  className='fixed top-16 right-4 z-50'
+                  className='fixed inset-0 z-50 bg-black/20'
                   onClick={toggleNotif}
                 >
-                    <div onClick={(e) => e.stopPropagation()}>
+                    <div 
+                      className='absolute top-16 right-4'
+                      onClick={(e) => e.stopPropagation()}
+                    >
                         <Notifications />
                     </div>
                 </div>
