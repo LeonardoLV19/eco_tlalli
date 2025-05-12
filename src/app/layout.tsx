@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TabBar from "@/components/TabBar/TabBar";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <TabBar role="admin" />
+        <TabBar role="vendedor" />
         {children}
       </body>
     </html>
