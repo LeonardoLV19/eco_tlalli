@@ -69,7 +69,9 @@ const TabBar = ({ role }: TabBarProps) => {
 
   const icons = {
     cliente: [
-      <ShoppingCartIcon key="cart" sx={{ fontSize: 28, color: '#5DAF5D' }} />,
+      <Link key="cart" href="/carrito-customer">
+        <ShoppingCartIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>,
       <div key="user">{userMenu}</div>
     ],
     vendedor: [
