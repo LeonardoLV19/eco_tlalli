@@ -24,9 +24,10 @@ const PlusIcon = createSvgIcon(
 type PillProps = {
   text: string;
   color: "volver" | "añadir" | "personalizada" | "continue";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>; // Añadimos onClick aquí
 };
 
-const Pill = ({ text, color }: PillProps) => {
+const Pill = ({ text, color, onClick }: PillProps) => {
   const colorMap = {
     volver:
       "bg-[#4CAF4F] text-white border border-[#4CAF4F] text-lg font-bold hover:bg-[#3e9b40] hover:shadow-md",
@@ -39,17 +40,15 @@ const Pill = ({ text, color }: PillProps) => {
   };
 
   return (
-    <Badge
-      className={cn(
+    <button onClick={onClick} className={cn(
         "rounded-full px-4 py-1 text-sm font-sans inline-flex items-center gap-2",
         colorMap[color]
-      )}
-    >
+      )}>
       {color === "volver" && <ArrowBackIcon fontSize="large" />}
       <span>{text}</span>
       {color === "añadir" && <PlusIcon fontSize="medium" />}
       {color === "continue" && <ArrowForwardIcon fontSize="large" />}
-    </Badge>
+    </button>
   );
 };
 
