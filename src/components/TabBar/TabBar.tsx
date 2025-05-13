@@ -8,13 +8,14 @@ import PersonIcon from '@mui/icons-material/Person'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-type Role = 'cliente' | 'vendedor' | 'admin'
+export type Role = 'cliente' | 'vendedor' | 'admin'
 
 interface TabBarProps {
   role: Role
+  onNotifClick?: () => void
 }
 
-const TabBar = ({ role }: TabBarProps) => {
+const TabBar = ({ role, onNotifClick }: TabBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
@@ -75,7 +76,7 @@ const TabBar = ({ role }: TabBarProps) => {
       <div key="user">{userMenu}</div>
     ],
     vendedor: [
-      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D' }} />,
+      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} onClick={onNotifClick} />,
       <div key="user">{userMenu}</div>
     ],
     admin: [
@@ -128,7 +129,7 @@ const TabBar = ({ role }: TabBarProps) => {
         </nav>
         {/* Íconos */}
         <div className="flex space-x-6 items-center">
-          {icons[role]}
+          {icons[role].map((icon) => icon)}
         </div>
       </div>
     </header>
