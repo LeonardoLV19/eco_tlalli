@@ -7,16 +7,20 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-export default function PaginationCard() {
+export default function PaginationCard({ onChange }: { onChange?: (index: number) => void }) {
   const [active, setActive] = React.useState(0)
   const pages = ["Vendedores", "Solicitudes de productos", "Solicitudes de vendedores"]
 
   const handlePrev = () => {
-    setActive((prev) => (prev === 0 ? 0 : prev - 1))
+    const newIndex = active === 0 ? 0 : active - 1
+    setActive(newIndex)
+    onChange?.(newIndex)
   }
 
   const handleNext = () => {
-    setActive((prev) => (prev === pages.length - 1 ? prev : prev + 1))
+    const newIndex = active === pages.length - 1 ? active : active + 1
+    setActive(newIndex)
+    onChange?.(newIndex)
   }
 
   return (
@@ -40,7 +44,10 @@ export default function PaginationCard() {
       {pages.map((label, index) => (
         <Typography
           key={index}
-          onClick={() => setActive(index)}
+          onClick={() => {
+            setActive(index)
+            onChange?.(index)
+          }}
           sx={{
             mx: 1,
             px: 2,

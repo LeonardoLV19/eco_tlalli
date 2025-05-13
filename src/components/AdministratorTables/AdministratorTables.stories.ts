@@ -1,28 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import AdministratorTables from './AdministratorTables';
+import { AdministratorTables } from './AdministratorTables';
 
 const meta: Meta<typeof AdministratorTables> = {
   title: 'Components/AdministratorTables',
   component: AdministratorTables,
-};
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['companyApplications', 'productSales', 'vendorValidation'],
+      description: 'Selecciona la variante de tabla a mostrar',
+      defaultValue: 'companyApplications',
+    },
+  },
+} as Meta<typeof AdministratorTables>;
 
 export default meta;
 type Story = StoryObj<typeof AdministratorTables>;
 
-export const BasicTable: Story = {
+export const CompanyApplications: Story = {
   args: {
-    variant: 'basic', // Dependiendo de cómo estén organizadas dentro del componente
+    variant: 'companyApplications',
   },
 };
 
-export const ActionsTable: Story = {
+export const ProductSales: Story = {
   args: {
-    variant: 'actions',
+    variant: 'productSales',
   },
 };
 
-export const DownloadTable: Story = {
+export const VendorValidation: Story = {
   args: {
-    variant: 'download',
+    variant: 'vendorValidation',
   },
 };

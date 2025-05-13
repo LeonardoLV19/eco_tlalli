@@ -57,7 +57,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Component() {
+export function CarbonFootprintRadialChart() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
@@ -100,4 +100,4 @@ export function Component() {
   )
 }
 
-export default Component
+export default CarbonFootprintRadialChart

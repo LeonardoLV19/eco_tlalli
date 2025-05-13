@@ -35,7 +35,7 @@ const chartConfig = {
     color: "rgb(127, 228, 126)",
   },
 } satisfies ChartConfig
-export function Component() {
+export function CarbonFootprintScore() {
   const totalVisitors = chartData[0].rojo + chartData[0].rosa + chartData[0].amarillo + chartData[0].verde
   return (
     <Card className="flex flex-col">
@@ -133,4 +133,4 @@ export function Component() {
   )
 }
 
-export default Component
+export default CarbonFootprintScore

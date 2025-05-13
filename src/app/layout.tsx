@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import TabBar from "@/components/TabBar/TabBar";
+import NotifSeller from "./notif-seller/page";
 
 export const metadata: Metadata = {
   title: "EcoTlalli",
@@ -15,7 +15,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body
+        className={`antialiased`}
+      >
+
+    
+
+        <NotifSeller role="cliente" />
+
+        {children}
+      </body>
+
     </html>
   );
 }
