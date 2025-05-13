@@ -18,7 +18,11 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+
+        <TabBar role="cliente" />
+
         <NotifSeller role="cliente" />
+
         {children}
       </body>
 
