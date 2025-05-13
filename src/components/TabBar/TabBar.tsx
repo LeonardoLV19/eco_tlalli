@@ -88,8 +88,8 @@ const TabBar = ({ role }: TabBarProps) => {
       { label: 'Inicio', href:'/', match: '/'},
       { label: 'Cotizar', href:'/cotizar', match: '/cotizar'},
       { label: 'Acerca de', href:'', match: ''},
-      { label: 'Tienda', href:'/marketplace', match: '/marketplace'},
-      { label: 'Estadisticas', href:'', match: ''}
+      { label: 'Cotizaciones', href:'', match: ''},
+      { label: 'Tienda', href:'/marketplace', match: '/marketplace'}
     ],
     vendedor: [
       { label: 'Mis productos', href:'', match: ''},
