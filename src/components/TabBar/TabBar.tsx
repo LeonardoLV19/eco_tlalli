@@ -44,30 +44,23 @@ const TabBar = ({ role }: TabBarProps) => {
       <PersonIcon
         onClick={toggleMenu}
         sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }}
-        aria-label="Abrir menú de usuario"
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') toggleMenu()
-        }}
       />
       {isMenuOpen && (
-        <div className="absolute right-0 mt-2 w-56 z-50 bg-white rounded-md shadow-lg border border-[#5DAF5D]">
+        <div className="absolute right-0 mt-2 w-56 z-50">
           <select
             onChange={(e) => {
               const path = e.target.value
               if (path) window.location.href = path
             }}
-            className="w-full px-3 py-2 border border-[#5DAF5D] text-[#1E1E1E] text-sm rounded-md focus:ring-2 focus:ring-[#5DAF5D] focus:border-[#5DAF5D] bg-white"
+            className="w-full px-3 py-2 border border-[#5DAF5D] text-[#1E1E1E] text-sm rounded-md focus:ring-2 focus:ring-[#5DAF5D] focus:border-[#5DAF5D] bg-white shadow-lg"
             defaultValue=""
-            aria-label="Seleccionar perfil de inicio"
           >
             <option value="" disabled hidden>
               Seleccionar perfil de inicio
             </option>
             <option value="/login-customer">Iniciar como cliente</option>
-            <option value="/login-vendedor">Iniciar como vendedor</option>
-            <option value="/login-admin">Iniciar como admin</option>
+            <option value="">Iniciar como vendedor</option>
+            <option value="">Iniciar como admin</option>
           </select>
         </div>
       )}
@@ -76,13 +69,13 @@ const TabBar = ({ role }: TabBarProps) => {
 
   const icons = {
     cliente: [
-      <Link key="cart" href="/carrito-customer" aria-label="Carrito de compras">
+      <Link key="cart" href="/carrito-customer">
         <ShoppingCartIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
       </Link>,
       <div key="user">{userMenu}</div>
     ],
     vendedor: [
-      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D' }} aria-label="Notificaciones" />,
+      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D' }} />,
       <div key="user">{userMenu}</div>
     ],
     admin: [
@@ -93,17 +86,17 @@ const TabBar = ({ role }: TabBarProps) => {
   const navItems = {
     cliente: [
       { label: 'Inicio', href:'/', match: '/'},
-      { label: 'Cotizar', href:'/cotizar', match: '/cotizar'},
-      { label: 'Acerca de', href:'/acerca-de', match: '/acerca-de'},
-      { label: 'Tienda', href:'/tienda', match: '/tienda' }
+      { label: 'Cotizar', href:'', match: ''},
+      { label: 'Acerca de', href:'', match: ''},
+      { label: 'Tienda', href:'', match: '' }
     ],
     vendedor: [
-      { label: 'Mis productos', href:'/mis-productos', match: '/mis-productos'},
-      { label: 'Consultar ventas', href:'/consultar-ventas', match: '/consultar-ventas'}
+      { label: 'Mis productos', href:'', match: ''},
+      { label: 'Consultar ventas', href:'', match: ''}
     ],
     admin: [
       { label: 'Vendedores', href:'/validationSystem-admin', match: '/validationSystem-admin'},
-      { label: 'Instalaciones', href:'/instalaciones', match: '/instalaciones'}
+      { label: 'Instalaciones', href:'', match: ''}
     ]
   }
 
