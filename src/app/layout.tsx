@@ -21,6 +21,7 @@ export default function RootLayout({
         <NotifSeller role="vendedor" />
         {children}
       </body>
+
     </html>
   );
 }

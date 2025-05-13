@@ -1,34 +1,37 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 
-export function DoubleButtons() {
-  const [selectedTab, setSelectedTab] = useState<'compras' | 'cotizaciones'>('compras')
+interface DoubleButtonsProps {
+  selectedTab: 'compras' | 'cotizaciones'
+  onChange: (tab: 'compras' | 'cotizaciones') => void
+}
 
+export function DoubleButtons({ selectedTab, onChange }: DoubleButtonsProps) {
   return (
     <div className="flex items-center justify-center">
-        <div className="inline-flex rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="inline-flex rounded-lg shadow-lg overflow-hidden border border-gray-200">
         <button
-            onClick={() => setSelectedTab('compras')}
-            className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
+          onClick={() => onChange('compras')}
+          className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
             selectedTab === 'compras'
-                ? 'bg-[#60A57D] text-black'
-                : 'bg-white text-black'
-            }`}
+              ? 'bg-[#4CAF4F] text-black'
+              : 'bg-white text-black'
+          }`}
         >
-            Compras
+          Compras
         </button>
         <button
-            onClick={() => setSelectedTab('cotizaciones')}
-            className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
+          onClick={() => onChange('cotizaciones')}
+          className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
             selectedTab === 'cotizaciones'
-                ? 'bg-[#60A57D] text-black'
-                : 'bg-white text-black'
-            }`}
+              ? 'bg-[#4CAF4F] text-black'
+              : 'bg-white text-black'
+          }`}
         >
-            Cotizaciones
+          Cotizaciones
         </button>
-        </div>
+      </div>
     </div>
   )
 }
