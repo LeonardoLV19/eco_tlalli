@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <NotifSeller role="vendedor" />
+        <NotifSeller role="cliente" />
         {children}
       </body>
 
