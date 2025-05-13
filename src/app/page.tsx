@@ -2,6 +2,7 @@
 import React from "react";
 import Pill from "@/components/Pill/Pill";
 import Image from "next/image";
+import TabBar from "@/components/TabBar/TabBar";
 
 export default function Home() {
   return (
@@ -23,7 +24,12 @@ export default function Home() {
             ¿Quiénes <br className="hidden md:block" /> Somos?
           </h1>
           <p className="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
-            En EcoTlalli, creemos en un futuro más verde y sostenible. Nuestra misión es ayudar a las personas a reducir su huella de carbono y transformar sus hogares en espacios más eficientes y amigables con el planeta. A través de tecnología inteligente y soluciones accesibles, hacemos que la sustentabilidad sea fácil y alcanzable para todos.
+            En EcoTlalli, creemos en un futuro más verde y sostenible. Nuestra
+            misión es ayudar a las personas a reducir su huella de carbono y
+            transformar sus hogares en espacios más eficientes y amigables con
+            el planeta. A través de tecnología inteligente y soluciones
+            accesibles, hacemos que la sustentabilidad sea fácil y alcanzable
+            para todos.
           </p>
           <Pill text="Calcula tu huella de carbono!" color="personalizada" />
         </div>

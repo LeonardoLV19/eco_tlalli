@@ -21,6 +21,7 @@ export default function RootLayout({
         <TabBar role="admin" />
         {children}
       </body>
+
     </html>
   );
 }
