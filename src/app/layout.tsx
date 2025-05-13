@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <TabBar role="admin" />
+        <TabBar role="cliente" />
         {children}
       </body>
 

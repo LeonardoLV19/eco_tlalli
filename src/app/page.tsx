@@ -3,6 +3,7 @@ import React from "react";
 import Pill from "@/components/Pill/Pill";
 import Image from "next/image";
 import TabBar from "@/components/TabBar/TabBar";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -31,7 +32,9 @@ export default function Home() {
             accesibles, hacemos que la sustentabilidad sea fácil y alcanzable
             para todos.
           </p>
-          <Pill text="Calcula tu huella de carbono!" color="personalizada" />
+          <Link href='/questions'>
+            <Pill text="Calcula tu huella de carbono!" color="personalizada"/>
+          </Link>
         </div>
 
         {/* Imagen principal */}

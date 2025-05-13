@@ -59,7 +59,7 @@ const TabBar = ({ role }: TabBarProps) => {
               Seleccionar perfil de inicio
             </option>
             <option value="/login-customer">Iniciar como cliente</option>
-            <option value="">Iniciar como vendedor</option>
+            <option value="/login-seller">Iniciar como vendedor</option>
             <option value="">Iniciar como admin</option>
           </select>
         </div>
@@ -86,9 +86,10 @@ const TabBar = ({ role }: TabBarProps) => {
   const navItems = {
     cliente: [
       { label: 'Inicio', href:'/', match: '/'},
-      { label: 'Cotizar', href:'', match: ''},
+      { label: 'Cotizar', href:'/cotizar', match: '/cotizar'},
       { label: 'Acerca de', href:'', match: ''},
-      { label: 'Tienda', href:'', match: '' }
+      { label: 'Tienda', href:'/marketplace', match: '/marketplace'},
+      { label: 'Estadisticas', href:'', match: ''}
     ],
     vendedor: [
       { label: 'Mis productos', href:'', match: ''},
