@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { ProductCard as RawProductCard } from '@/components/ProductCard/ProductCard';
+import { ProductCard as RawProductCard } from '@/components/MarketplaceComponents/ProductCard/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { MoreVertical } from 'lucide-react';

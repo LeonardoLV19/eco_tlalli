@@ -1,6 +1,7 @@
 "use client"
+
 import { TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts"
 import {
   Card,
   CardContent,
@@ -17,6 +18,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { Chart } from "chart.js"
+
 const chartData = [
   { month: "January", gas: 340, agua: 220, luz: 100 },
   { month: "February", gas: 300, agua: 220, luz: 150 },
@@ -26,6 +29,7 @@ const chartData = [
   { month: "June", gas: 305, agua: 150, luz: 80 },
   { month: "July", gas: 280, agua: 150, luz: 70 },
 ]
+
 const chartConfig = {
   gas: {
     label: "Gas",
@@ -40,51 +44,48 @@ const chartConfig = {
     color: "rgb(26,118,30)",
   },
 } satisfies ChartConfig
+
 export function Component() {
   return (
-    <Card>
-      <CardHeader>
-      <CardDescription>Estadisticas</CardDescription>
+    <Card className="w-full max-w-5xl mx-auto p-4">
+      <CardHeader className="pb-0">
+        <CardDescription>Estadísticas</CardDescription>
         <CardTitle>Ahorro</CardTitle>
       </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip content={<ChartTooltipContent hideLabel />} />
-            <ChartLegend content={<ChartLegendContent />} />
-            <Bar
-              dataKey="luz"
-              stackId="a"
-              fill="var(--color-luz)"
-              radius={[0, 0, 4, 4]}
-            />
-            <Bar
-              dataKey="agua"
-              stackId="a"
-              fill="var(--color-agua)"
-              radius={[0, 0, 0, 0]}
-            />
-            <Bar
-              dataKey="gas"
-              stackId="a"
-              fill="var(--color-gas)"
-              radius={[20, 20, 0, 0]}
-            />
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Su huella de carbono se redujo 5.7% este ultimo mes <TrendingUp className="h-4 w-4" />
+
+      <CardContent className="pt-4">
+        <div className="w-full" style={{ height: '80px', width: '80%' }}>
+          <ChartContainer config={chartConfig}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData} barSize={18} className='-translate-y-8'>
+                  <CartesianGrid vertical={false} stroke="#E5E7EB" />
+                  <XAxis
+                    dataKey="month"
+                    tickLine={false}
+                    tickMargin={10}
+                    axisLine={false}
+                    tickFormatter={(value) => value.slice(0, 3)}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6B7280", fontSize: 12 }}
+                  />
+                  <ChartTooltip content={<ChartTooltipContent hideLabel />} />
+                  <Bar dataKey="luz" stackId="a" fill="var(--color-luz)" radius={[0, 0, 0, 0]} />
+                  <Bar dataKey="agua" stackId="a" fill="var(--color-agua)" radius={[0, 0, 0, 0]} />
+                  <Bar dataKey="gas" stackId="a" fill="var(--color-gas)" radius={[12, 12, 0, 0]} />
+                </BarChart>
+            </ResponsiveContainer>
+          </ChartContainer>
         </div>
+      </CardContent>
+
+      <CardFooter className="flex-col items-start gap-2 text-sm">
+        {/* <div className="flex gap-2 font-medium leading-none">
+          Su huella de carbono se redujo 5.7% este último mes
+          <TrendingUp className="h-4 w-4" />
+        </div> */}
       </CardFooter>
     </Card>
   )

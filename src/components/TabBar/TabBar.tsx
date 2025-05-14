@@ -89,7 +89,7 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
       { label: 'Inicio', href:'/', match: '/'},
       { label: 'Cotizar', href:'/cotizar', match: '/cotizar'},
       { label: 'Acerca de', href:'', match: ''},
-      { label: 'Cotizaciones', href:'', match: ''},
+      { label: 'Cotizaciones', href:'/cotizar_3', match: '/cotizar_3'},
       { label: 'Tienda', href:'/marketplace', match: '/marketplace'}
     ],
     vendedor: [
