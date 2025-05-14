@@ -1,13 +1,25 @@
-import React, { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Star } from "lucide-react"
-import Image from "next/image"
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Star } from "lucide-react";
+import Image from "next/image";
 
-export function ProductCard() {
-  const [checked, setChecked] = useState(true)
-  const [count, setCount] = useState(1)
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+};
+
+type ProductCardProps = {
+  product: Product;
+};
+
+function ProductCard({ product }: ProductCardProps) {
+  const [checked, setChecked] = useState(true);
+  const [count, setCount] = useState(1);
 
   return (
     <div className="flex items-start gap-2 w-full max-w-[1280px]">
@@ -73,39 +85,40 @@ export function ProductCard() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
+export default ProductCard;
+
 export function ProductCardVariant() {
-    return (
-      <div className="flex items-start gap-0 w-full max-w-[476px]">
-        <Card className="grid grid-cols-[116px_1fr] w-full h-[103px] shadow-lg rounded-lg overflow-hidden p-0">
-          {/* Imagen */}
-          <div className="relative w-[116px] h-[103px]">
-            <Image
-              src="/solarPanel.png"
-              alt="Solar panels"
-              fill
-              sizes="116px"
-              style={{ objectFit: "cover" }}
-              priority
-            />
+  return (
+    <div className="flex items-start gap-0 w-full max-w-[476px]">
+      <Card className="grid grid-cols-[116px_1fr] w-full h-[103px] shadow-lg rounded-lg overflow-hidden p-0">
+        {/* Imagen */}
+        <div className="relative w-[116px] h-[103px]">
+          <Image
+            src="/solarPanel.png"
+            alt="Solar panels"
+            fill
+            sizes="116px"
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </div>
+
+        {/* Contenido con fondo gris */}
+        <CardContent className="flex flex-col justify-between bg-white w-full p-0">
+          {/* Título y precio */}
+          <div className="flex flex-col justify-between h-full p-2">
+            <h2 className="text-[16px] font-bold font-sans text-black">
+              Elios Terra G8 | Ground Mount System For 8 Solar Panel
+            </h2>
+            <span className="text-[#258429] text-[16px] font-bold">
+              52,272 MXN
+            </span>
           </div>
-  
-          {/* Contenido con fondo gris */}
-          <CardContent className="flex flex-col justify-between bg-white w-full p-0">
-            {/* Título y precio */}
-            <div className="flex flex-col justify-between h-full p-2">
-              <h2 className="text-[16px] font-bold font-sans text-black">
-                Elios Terra G8 | Ground Mount System For 8 Solar Panel
-              </h2>
-              <span className="text-[#258429] text-[16px] font-bold">
-                52,272 MXN
-              </span>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-  
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
