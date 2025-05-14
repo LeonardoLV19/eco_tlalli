@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Component as CarbonFootprintScore } from './CarbonFootprintScore';
+import { CarbonFootprintScore as CarbonFootprintScore } from './CarbonFootprintScore';
 
 const meta: Meta<typeof CarbonFootprintScore> = {
   title: 'Components/CarbonFootprintScore',

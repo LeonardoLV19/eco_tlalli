@@ -9,7 +9,7 @@ const validationSystemAdmin = () => {
   const [activePage, setActivePage] = useState(0)
 
   // Mapeo de índice a variantes (queda pendiente una tabla, por ello, únicamente tenemos dos variantes)
-  const variants = ['', 'vendorValidation', 'companyApplications']
+  const variants = ['activeVendors', 'vendorValidation', 'companyApplications']
 
   return (
     <div style={{ padding: '2rem' }}>
