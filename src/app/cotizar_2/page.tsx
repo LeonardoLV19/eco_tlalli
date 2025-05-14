@@ -2,15 +2,18 @@
 
 import EnergyChartCard from '@/components/consumo/Consumo'
 import TablaCotizacionV1 from '@/components/TablaCotizacion/TablaCotizacionV1'
+import Link from 'next/link';
 import Pill from '@/components/Pill/Pill'
 import React from 'react'
-import { ProductCard } from '@/components/MarketplaceComponents/ProductCard/ProductCard';
+import ProductCard from '@/components/MarketplaceComponents/ProductsGallery/ProductCard/ProductCard';
 
 const page = () => {
     return (
       <div className="pt-20 flex flex-col items-center gap-20">
         <EnergyChartCard />
-        <Pill text="Ver mas detalles" color="personalizada" />
+        <Link href='/cotizar_3'>
+          <Pill text="Ver mas detalles" color="personalizada" />
+        </Link>
         <TablaCotizacionV1 />
         
   
@@ -20,9 +23,9 @@ const page = () => {
           </h2>
         </div>
         <div className="flex flex-col items-center gap-10">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {/* <ProductCard /> */}
+            {/* <ProductCard /> */}
+            {/* <ProductCard /> */}
         </div>
       </div>
     );
