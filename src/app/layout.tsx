@@ -21,7 +21,7 @@ export default function RootLayout({
 
     
 
-        <NotifSeller role="cliente" />
+        <NotifSeller role="admin" />
 
         {children}
       </body>
