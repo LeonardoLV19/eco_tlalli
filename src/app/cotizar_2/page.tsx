@@ -1,10 +1,10 @@
 "use client";
 
 import EnergyChartCard from '@/components/consumo/Consumo'
-import { ProductCard } from '@/components/ProductCard/ProductCard';
 import TablaCotizacionV1 from '@/components/TablaCotizacion/TablaCotizacionV1'
 import Pill from '@/components/Pill/Pill'
 import React from 'react'
+import { ProductCard } from '@/components/MarketplaceComponents/ProductCard/ProductCard';
 
 const page = () => {
     return (
