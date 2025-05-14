@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Component as CarbonFootprintChart } from './CarbonFootprintRadialChart';
+import { CarbonFootprintRadialChart as CarbonFootprintChart } from './CarbonFootprintRadialChart';
 
 const meta: Meta<typeof CarbonFootprintChart> = {
   title: 'Components/CarbonFootprintChart',

@@ -1,11 +1,11 @@
 "use client";
 
 import EnergyChartCard from '@/components/consumo/Consumo'
-import { ProductCard } from '@/components/MarketplaceComponents/ProductCard/ProductCard';
 import TablaCotizacionV1 from '@/components/TablaCotizacion/TablaCotizacionV1'
 import Link from 'next/link';
 import Pill from '@/components/Pill/Pill'
 import React from 'react'
+import ProductCard from '@/components/MarketplaceComponents/ProductsGallery/ProductCard/ProductCard';
 
 const page = () => {
     return (
@@ -23,9 +23,9 @@ const page = () => {
           </h2>
         </div>
         <div className="flex flex-col items-center gap-10">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {/* <ProductCard /> */}
+            {/* <ProductCard /> */}
+            {/* <ProductCard /> */}
         </div>
       </div>
     );
