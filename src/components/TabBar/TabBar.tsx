@@ -1,5 +1,13 @@
 "use client";
 
+
+import React from 'react'
+import Image from 'next/image'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import PersonIcon from '@mui/icons-material/Person'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -16,6 +24,10 @@ interface TabBarProps {
 }
 
 const TabBar = ({ role, onNotifClick }: TabBarProps) => {
+
+  const pathname = usePathname()
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -68,6 +80,7 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
     </div>
   );
 
+
   const icons = {
     cliente: [
       <Link key="cart" href="/carrito-customer">
@@ -75,6 +88,24 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
           sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
         />
       </Link>,
+
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
+    ],
+    vendedor: [
+      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} onClick={onNotifClick} />,
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
+    ],
+    admin: [
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
+    ]
+  }
+
       <div key="user">{userMenu}</div>,
     ],
     vendedor: [
@@ -87,6 +118,7 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
     ],
     admin: [<div key="user">{userMenu}</div>],
   };
+
 
   const navItems = {
     cliente: [
@@ -146,4 +178,8 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
   );
 };
 
+
+export default TabBar
+
 export default TabBar;
+
