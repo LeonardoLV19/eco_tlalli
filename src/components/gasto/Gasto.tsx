@@ -1,6 +1,7 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
+import { ResponsiveContainer } from "recharts";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts"
 import { useEffect, useState } from "react"
 import {
@@ -66,7 +67,7 @@ export default function EnergyLineChartCard() {
   if (!isClient) return null
 
   return (
-    <Card className="w-[45%] h-[5%]">
+    <Card className="w-full h-full overflow-hidden">
       <CardHeader>
         <CardTitle>Gasto</CardTitle>
         <div className="flex gap-4 mt-2">
@@ -82,25 +83,27 @@ export default function EnergyLineChartCard() {
         </div>
       </CardHeader>
 
-      <CardContent className="p-0 flex justify-center items-center h-[70%]">
+      <CardContent className="p-0 px-0 flex justify-center items-center h-[70%]">
         <div style={{ width: "100%", height: "100%" }}>
           <ChartContainer config={chartConfig}>
-            <LineChart data={energyData} width={700} height={300}>
-              <CartesianGrid vertical={false} strokeDasharray="3 3" />
-              <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                domain={[0, 350]}
-                interval={0}
-                ticks={[...Array(8).keys()].map(i => i * 50)}
-              />
-              <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-              <Line dataKey="Futuro" type="monotone" stroke="#258429" strokeWidth={2} dot={false} />
-              <Line dataKey="Actual" type="monotone" stroke="#292D30" strokeWidth={2} dot={false} />
-              <Line dataKey="Promedio" type="monotone" stroke="#DDC512" strokeWidth={2} dot={false} />
-            </LineChart>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={energyData}>
+                <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+                <YAxis
+                  tickLine={false}
+                  axisLine={false}
+                  tickMargin={8}
+                  domain={[0, 350]}
+                  interval={0}
+                  ticks={[...Array(8).keys()].map(i => i * 50)}
+                />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                <Line dataKey="Futuro" type="monotone" stroke="#258429" strokeWidth={2} dot={false} />
+                <Line dataKey="Actual" type="monotone" stroke="#292D30" strokeWidth={2} dot={false} />
+                <Line dataKey="Promedio" type="monotone" stroke="#DDC512" strokeWidth={2} dot={false} />
+              </LineChart>
+            </ResponsiveContainer>
           </ChartContainer>
         </div>
       </CardContent>
