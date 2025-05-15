@@ -1,8 +1,22 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+declare module '@mui/material/styles' {
+  interface Palette {
+    nuevo: Palette['primary'];
+  }
+  interface PaletteOptions {
+    nuevo?: PaletteOptions['primary'];
+  }
+}
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    nuevo: true;
+  }
+}
 
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
@@ -18,7 +32,7 @@ const VisuallyHiddenInput = styled('input')({
 
 interface InputFileUploadProps {
   buttonText?: string;
-  color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | null;
+  color?: ButtonProps['color'] | 'nuevo';
   onChange?: (files: FileList | null) => void;
 }
 
@@ -26,6 +40,10 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#5DAF5D',
+      contrastText: '#FFFFFF',
+    },
+    nuevo: {
+      main: '#21602f',
       contrastText: '#FFFFFF',
     },
   },
@@ -40,10 +58,8 @@ export default function InputFileUpload({
     <ThemeProvider theme={theme}>
       <Button
         component="label"
-        role={undefined}
         variant="contained"
-        tabIndex={-1}
-        {...(color ? { color } : {})}
+        color={color as any}
         startIcon={<CloudUploadIcon />}
       >
         {buttonText}

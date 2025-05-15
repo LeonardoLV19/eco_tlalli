@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <NotifSeller role="cliente" />
+        <NotifSeller role="admin" />
 
         {children}
       </body>
