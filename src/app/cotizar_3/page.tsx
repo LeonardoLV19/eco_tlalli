@@ -15,46 +15,51 @@ import TablaCotizacionV2 from '@/components/TablaCotizacion/TablaCotizacionV2';
 const cotizar_3 = () => {
   return (
     <div className="px-4 md:px-12 py-6 space-y-8">
-      {/* Fila 1: Tarjeta de ahorro */}
       <div className="w-full max-w-[1380px] mx-auto">
         <SavingsDistribution />
       </div>
 
-      <div className="w-full max-w-[1380px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="h-[250px] ml-[60px]">
+      <div className="w-full max-w-[1380px] mx-auto flex flex-wrap justify-center gap-4">
+        <div className="h-[250px] min-w-[320px] w-[360px]">
           <SpendingResume />
         </div>
-        <div className="h-[260px] w-full md:max-w-[420px] ml-[30px]">
+        <div className="h-[260px] min-w-[360px] w-[420px]">
           <SavingsStatistics />
         </div>
-        <div className="h-[250px] ml-[30px]">
+        <div className="h-[250px] min-w-[320px] w-[360px]">
           <ActionAreaCard />
         </div>
       </div>
 
-      <div className='w-full -translate-y-10 flex'>
-        <div className="w-[100%] h-full translate-x-60 shrink-0">
-          <EnergyLineChartCard />
+      <div className="w-full max-w-[1500px] mx-auto flex flex-wrap justify-center gap-6 -translate-y-10">
+        <div className="min-w-[600px] w-[700px] h-[400px] max-w-full flex justify-center items-center">
+          <div className="w-full h-full">
+            <EnergyLineChartCard />
+          </div>
         </div>
-        <div className="h-[30%] -translate-x-145">
+        <div className="min-w-[350px] w-[400px] max-w-full h-[400px]">
           <SpendingByCategory />
         </div>
       </div>
-      <div className='max-w-[1500px] mx-auto -translate-y-10 flex'>
-        <div className='w-[350px] h-[500px] translate-x-25'>
-            <CarbonFootprintScore />
+
+      <div className="w-full max-w-[1500px] mx-auto flex flex-wrap justify-center gap-6 mt-25 translate-x-20">
+        <div className="min-w-[350px] w-[350px] h-[500px] max-w-full">
+          <CarbonFootprintScore />
         </div>
-        <div className='w-full translate-x-55'>
-            <EnergyChartCard />
+        <div className="min-w-[900px] w-[1000px] h-[500px] max-w-full">
+          <EnergyChartCard />
         </div>
       </div>
-      <h2 className="text-xl md:text-3xl font-semibold text-[#141131] translate-x-60 -translate-y-20">
+
+      <h2 className="text-xl md:text-3xl font-semibold text-[#141131] text-center md:text-left px-4 md:px-12 -translate-y-10">
         Consumo energético por producto
       </h2>
-      <div className='w-full max-w-[1500px] mx-auto -translate-y-20'>
+
+      <div className="w-full max-w-[1500px] mx-auto -translate-y-10 px-4">
         <ProductDetails />
       </div>
-      <div className='w-full -translate-y-20'>
+
+      <div className="w-full px-4 -translate-y-10">
         <TablaCotizacionV2 />
       </div>
     </div>
