@@ -7,7 +7,7 @@ import ProductGallery from "@/components/MarketplaceComponents/ProductsGallery/P
 import CategoryFilterSelection from "@/components/MarketplaceComponents/CategoryFilterSelection/CategoryFilterSelectio";
 
 export default function Header() {
-  const title = "Nuevo artículo Limpia Culos Max de 200ml";
+  const title = "Nuevo artículo ahorra Gas Max de 200ml";
   const description =
     "Satisface tus necesidades con este increíble producto. ¡Prueba lo mejor para tu hogar!";
 
