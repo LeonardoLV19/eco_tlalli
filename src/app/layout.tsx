@@ -15,17 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-
-    
-
-        <NotifSeller role="admin" />
+      <body className={`antialiased`}>
+        <NotifSeller role="cliente" />
 
         {children}
       </body>
-
     </html>
   );
 }
