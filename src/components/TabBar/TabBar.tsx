@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -16,71 +16,27 @@ interface TabBarProps {
 }
 
 const TabBar = ({ role, onNotifClick }: TabBarProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false)
-      }
-    }
-
-    if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMenuOpen])
-
-  const userMenu = (
-    <div className="relative" ref={menuRef}>
-      <PersonIcon
-        onClick={toggleMenu}
-        sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }}
-      />
-      {isMenuOpen && (
-        <div className="absolute right-0 mt-2 w-56 z-50">
-          <select
-            onChange={(e) => {
-              const path = e.target.value
-              if (path) window.location.href = path
-            }}
-            className="w-full px-3 py-2 border border-[#5DAF5D] text-[#1E1E1E] text-sm rounded-md focus:ring-2 focus:ring-[#5DAF5D] focus:border-[#5DAF5D] bg-white shadow-lg"
-            defaultValue=""
-          >
-            <option value="" disabled hidden>
-              Seleccionar perfil de inicio
-            </option>
-            <option value="/login-customer">Iniciar como cliente</option>
-            <option value="/login-seller">Iniciar como vendedor</option>
-            <option value="">Iniciar como admin</option>
-          </select>
-        </div>
-      )}
-    </div>
-  )
 
   const icons = {
     cliente: [
       <Link key="cart" href="/carrito-customer">
         <ShoppingCartIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
       </Link>,
-      <div key="user">{userMenu}</div>
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
     ],
     vendedor: [
       <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} onClick={onNotifClick} />,
-      <div key="user">{userMenu}</div>
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
     ],
     admin: [
-      <div key="user">{userMenu}</div>
+      <Link key="user" href="/login-customer">
+        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
+      </Link>
     ]
   }
 
