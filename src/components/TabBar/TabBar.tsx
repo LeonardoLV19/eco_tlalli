@@ -1,13 +1,5 @@
 "use client";
 
-
-import React from 'react'
-import Image from 'next/image'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import PersonIcon from '@mui/icons-material/Person'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -24,13 +16,9 @@ interface TabBarProps {
 }
 
 const TabBar = ({ role, onNotifClick }: TabBarProps) => {
-
-  const pathname = usePathname()
-
-
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -80,7 +68,6 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
     </div>
   );
 
-
   const icons = {
     cliente: [
       <Link key="cart" href="/carrito-customer">
@@ -88,25 +75,11 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
           sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
         />
       </Link>,
-
       <Link key="user" href="/login-customer">
-        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
-      </Link>
-    ],
-    vendedor: [
-      <NotificationsIcon key="bell" sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} onClick={onNotifClick} />,
-      <Link key="user" href="/login-customer">
-        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
-      </Link>
-    ],
-    admin: [
-      <Link key="user" href="/login-customer">
-        <PersonIcon sx={{ fontSize: 28, color: '#5DAF5D', cursor: 'pointer' }} />
-      </Link>
-    ]
-  }
-
-      <div key="user">{userMenu}</div>,
+        <PersonIcon
+          sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
+        />
+      </Link>,
     ],
     vendedor: [
       <NotificationsIcon
@@ -114,11 +87,14 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
         sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
         onClick={onNotifClick}
       />,
-      <div key="user">{userMenu}</div>,
+      <Link key="user" href="/login-customer">
+        <PersonIcon
+          sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
+        />
+      </Link>,
     ],
     admin: [<div key="user">{userMenu}</div>],
   };
-
 
   const navItems = {
     cliente: [
@@ -169,17 +145,12 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
             </Link>
           ))}
         </nav>
+
         {/* Íconos */}
-        <div className="flex space-x-6 items-center">
-          {icons[role].map((icon) => icon)}
-        </div>
+        <div className="flex space-x-6 items-center">{icons[role]}</div>
       </div>
     </header>
   );
 };
 
-
-export default TabBar
-
 export default TabBar;
-
