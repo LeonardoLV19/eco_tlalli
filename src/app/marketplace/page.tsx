@@ -4,6 +4,7 @@ import React from "react";
 import CategoryGallery from "@/components/MarketplaceComponents/CategoryGallery/CategoryGallery";
 import MainBanner from "@/components/MarketplaceComponents/MainBanner/MainBanner";
 import ProductGallery from "@/components/MarketplaceComponents/ProductsGallery/ProductGallery";
+import CategoryFilterSelection from "@/components/MarketplaceComponents/CategoryFilterSelection/CategoryFilterSelectio";
 
 export default function Header() {
   const title = "Nuevo artículo Limpia Culos Max de 200ml";
@@ -12,6 +13,7 @@ export default function Header() {
 
   return (
     <div>
+      <CategoryFilterSelection />
       {/* Banner principal */}
       <MainBanner title={title} description={description} />
       {/* Galería */}
