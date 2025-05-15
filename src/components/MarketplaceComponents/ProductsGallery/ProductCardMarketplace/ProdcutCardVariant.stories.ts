@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProductCardVariant } from "./ProductCard";
+import { ProductCardVariant } from "./ProductCardMarketplace";
 
 const meta: Meta<typeof ProductCardVariant> = {
   title: "Components/ProductCard/Compact",
@@ -15,5 +15,5 @@ export default meta;
 type Story = StoryObj<typeof ProductCardVariant>;
 
 export const Compact: Story = {
-    args: {},
+  args: {},
 };
