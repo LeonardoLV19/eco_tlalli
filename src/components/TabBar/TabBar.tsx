@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -7,8 +7,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import RightDrawer from "../SideBar/SideBar";
 
-export type Role = "cliente" | "vendedor" | "admin";
+export type Role = "home" | "cliente" | "vendedor" | "admin";
 
 interface TabBarProps {
   role: Role;
@@ -69,7 +70,7 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
   );
 
   const icons = {
-    cliente: [
+    home: [
       <Link key="cart" href="/carrito-customer">
         <ShoppingCartIcon
           sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
@@ -80,6 +81,14 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
           sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
         />
       </Link>,
+    ],
+    cliente: [
+      <Link key="cart" href="/carrito-customer">
+        <ShoppingCartIcon
+          sx={{ fontSize: 28, color: "#5DAF5D", cursor: "pointer" }}
+        />
+      </Link>,
+      <RightDrawer key="sidebar" />,
     ],
     vendedor: [
       <NotificationsIcon
@@ -97,6 +106,13 @@ const TabBar = ({ role, onNotifClick }: TabBarProps) => {
   };
 
   const navItems = {
+    home: [
+      { label: "Inicio", href: "/", match: "/" },
+      { label: "Cotizar", href: "/cotizar", match: "/cotizar" },
+      { label: "Acerca de", href: "", match: "" },
+      { label: "Cotizaciones", href: "/cotizar_3", match: "/cotizar_3" },
+      { label: "Tienda", href: "/marketplace", match: "/marketplace" },
+    ],
     cliente: [
       { label: "Inicio", href: "/", match: "/" },
       { label: "Cotizar", href: "/cotizar", match: "/cotizar" },
