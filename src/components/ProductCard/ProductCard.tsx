@@ -1,23 +1,14 @@
 import React, { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Star } from "lucide-react"
 import Image from "next/image"
 
 export function ProductCard() {
-  const [checked, setChecked] = useState(true)
   const [count, setCount] = useState(1)
 
   return (
     <div className="flex items-start gap-2 w-full max-w-[1280px]">
-      {/* Checkbox fuera, controla estado visual */}
-      <Checkbox
-        className="self-start mt-2 border-green-600 text-green-600"
-        checked={checked}
-        onCheckedChange={(value) => setChecked(!!value)}
-      />
-
       {/* Tarjeta como grid de 2 columnas */}
       <Card className="grid grid-cols-[311px_1fr] w-full h-[144px] shadow-lg rounded-lg overflow-hidden p-0">
         {/* Imagen */}

@@ -22,7 +22,7 @@ export default function NotifSeller({ role }: Props) {
 
             {role === 'vendedor' && showNotif && (
                 <div
-                  className='fixed inset-0 z-50 bg-black/20'
+                  className='fixed inset-0 z-50 bg-black/40'
                   onClick={toggleNotif}
                 >
                     <div 
