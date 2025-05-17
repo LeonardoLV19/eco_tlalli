@@ -68,7 +68,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-700 text-lg mb-6">
-                En EcoTalli creemos en la posibilidad de transformar cada hogar y negocio en un espacio más sustentable.
+                En EcoTlalli creemos en la posibilidad de transformar cada hogar y negocio en un espacio más sustentable.
                 Nuestra plataforma ayuda a individuos y empresas a mostrar y reducir su huella de carbono.
               </p>
               <p className="text-gray-700 text-lg">
@@ -101,7 +101,7 @@ export default function Home() {
       <section className="py-20 px-6 md:px-20 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Beneficios EcoTalli</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Beneficios EcoTlalli</h2>
             <div className="w-20 h-1 bg-green-500 mx-auto"></div>
           </div>
           
