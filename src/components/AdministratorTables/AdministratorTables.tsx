@@ -4,7 +4,7 @@ import { FiDownload } from 'react-icons/fi';
 /**
  * Tipos de variantes disponibles para la tabla.
  */
-type Variant = 'companyApplications' | 'productSales' | 'vendorValidation';
+type Variant = 'companyApplications' | 'productSales' | 'vendorValidation' | 'activeVendors';
 
 interface AdministratorTablesProps {
   variant: Variant;
@@ -165,6 +165,55 @@ export const AdministratorTables: React.FC<AdministratorTablesProps> = ({ varian
           </table>
         </div>
       );
+    }
+
+    case 'activeVendors': {
+      const data = [
+        ['01', 'Saving Energy', '83', 'savingenergy@gmail.com', '04/06/2023'],
+        ['02', 'Sí sí luz', '832', 'sisiluz@gmail.com', '06/12/2022'],
+        ['03', 'Grupo Industrionic', '72', 'grupoindustrionic@gmail.com', '09/11/2021'],
+        ['04', 'Lux energy', '92', 'luzenergy@gmail.com', '08/09/2022'],
+        ['05', 'Sunenergy', '84', 'sunenergy@gmail.com', '04/10/2020'],
+        ['06', 'Lee', '93', 'lee@gmail.com', '07/08/2022'],
+        ['07', 'ENF Solar', '92', 'enfsolar@gmail.com', '09/02/2022'],
+        ['08', 'Solarama', '72', 'solarama@gmail.com', '08/07/2-23']
+      ];
+
+      return (
+        <div className={wrapperClass}>
+          <table className={tableClass}>
+            <thead className={theadClass}>
+              <tr>
+                <th className="px-3 py-2">ID</th>
+                <th className="px-3 py-2">Nombre de la empresa</th>
+                <th className="px-3 py-2">Cantidad de productos vendidos</th>
+                <th className="px-3 py-2">Correo electrónico</th>
+                <th className="px-3 py-2">Fecha de registro</th>
+                <th className="px-3 py-2">Inspeccionar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map(([id, name, amount, email, date]) => (
+                <tr key={id} className="border-t">
+                  <td className="px-3 py-2">{id}</td>
+                  <td className="px-3 py-2">{name}</td>
+                  <td className="px-3 py-2">{amount}</td>
+                  <td className="px-3 py-2">{email}</td>
+                  <td className="px-3 py-2">{date}</td>
+                  <td className="px-3 py-2 flex gap-2">
+                    <button className="bg-red-500 hover:bg-red-600 active:scale-95 transition-transform text-white px-3 py-1 rounded-full text-xs">
+                      Eliminar
+                    </button>
+                    <button className="bg-teal-500 hover:bg-teal-600 active:scale-95 transition-transform text-white px-3 py-1 rounded-full text-xs">
+                      Ver perfil
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
     }
 
     default:
