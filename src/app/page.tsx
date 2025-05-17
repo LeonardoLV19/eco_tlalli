@@ -5,6 +5,8 @@ import Image from "next/image";
 import TabBar from "@/components/TabBar/TabBar";
 import Link from "next/link";
 
+
+
 export default function Home() {
   return (
     <div className="relative px-6 md:px-20 pt-1 pb-35 bg-white overflow-hidden">
