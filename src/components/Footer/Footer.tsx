@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">EcoTlalli</h3>
             <p className="text-gray-400">
-              Transformando hogares hacia la sustentabilidad desde 2023.
+              Transformando hogares hacia la sustentabilidad desde 2025.
             </p>
           </div>
 
@@ -58,13 +58,6 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Contacto</h4>
             <p className="text-gray-400 mb-2">contacto@ecotlalli.com</p>
             
-            {/* --- ESPACIO RESERVADO PARA ÍCONOS/IMÁGENES --- */}
-            <div className="flex gap-4 mt-4">
-              {/* Ejemplo de cómo agregarías un PNG después: 
-              <img src="/facebook-icon.png" alt="Facebook" className="w-6 h-6" />
-              <img src="/twitter-icon.png" alt="Twitter" className="w-6 h-6" />
-              */}
-            </div>
           </div>
         </div>
 
