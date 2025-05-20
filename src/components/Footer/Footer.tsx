@@ -8,7 +8,7 @@ export default function Footer() {
           
           {/* Columna 1 - Logo y descripción */}
           <div>
-            <h3 className="text-xl font-bold mb-4">EcoTalli</h3>
+            <h3 className="text-xl font-bold mb-4">EcoTlalli</h3>
             <p className="text-gray-400">
               Transformando hogares hacia la sustentabilidad desde 2025.
             </p>
@@ -56,14 +56,14 @@ export default function Footer() {
           {/* Columna 4 - Contacto y redes (ESPACIO PARA ÍCONOS) */}
           <div>
             <h4 className="font-bold mb-4">Contacto</h4>
-            <p className="text-gray-400 mb-2">contacto@ecotalli.com</p>
+            <p className="text-gray-400 mb-2">contacto@ecotlalli.com</p>
             
           </div>
         </div>
 
         {/* Derechos de autor */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} EcoTalli. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} EcoTlalli. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
