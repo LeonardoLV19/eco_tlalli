@@ -21,13 +21,13 @@ import {
 import { Chart } from "chart.js"
 
 const chartData = [
-  { month: "January", gas: 340, agua: 220, luz: 100 },
-  { month: "February", gas: 300, agua: 220, luz: 150 },
-  { month: "March", gas: 250, agua: 170, luz: 50 },
-  { month: "April", gas: 320, agua: 230, luz: 180 },
-  { month: "May", gas: 340, agua: 300, luz: 210 },
-  { month: "June", gas: 305, agua: 150, luz: 80 },
-  { month: "July", gas: 280, agua: 150, luz: 70 },
+  { month: "January", gas: 3400, agua: 2200, luz: 1000 },
+  { month: "February", gas: 3000, agua: 2200, luz: 1500 },
+  { month: "March", gas: 2500, agua: 1700, luz: 500 },
+  { month: "April", gas: 3200, agua: 2300, luz: 1800 },
+  { month: "May", gas: 3400, agua: 3000, luz: 2100 },
+  { month: "June", gas: 3050, agua: 1500, luz: 800 },
+  { month: "July", gas: 2800, agua: 1500, luz: 700 },
 ]
 
 const chartConfig = {
@@ -49,8 +49,29 @@ export function Component() {
   return (
     <Card className="w-full max-w-5xl mx-auto p-4">
       <CardHeader className="pb-0">
-        <CardDescription>Estadísticas</CardDescription>
-        <CardTitle>Ahorro</CardTitle>
+        <div className="flex justify-between items-start w-full">
+          {/* Izquierda: título y descripción */}
+          <div>
+            <CardDescription>Estadísticas</CardDescription>
+            <CardTitle>Ahorro</CardTitle>
+          </div>
+
+          {/* Derecha: leyenda de colores */}
+          <div className="flex gap-4 text-sm mt-1">
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(26,118,30)' }} />
+              <span className="text-gray-600">Luz</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(162,195,163)' }} />
+              <span className="text-gray-600">Agua</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(124,211,160)' }} />
+              <span className="text-gray-600">Gas</span>
+            </div>
+          </div>
+        </div>
       </CardHeader>
 
       <CardContent className="pt-4">
@@ -70,6 +91,7 @@ export function Component() {
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#6B7280", fontSize: 12 }}
+                    tickFormatter={(value) => `${value / 1000}k`}
                   />
                   <ChartTooltip content={<ChartTooltipContent hideLabel />} />
                   <Bar dataKey="luz" stackId="a" fill="var(--color-luz)" radius={[0, 0, 0, 0]} />

@@ -43,10 +43,10 @@ export function CarbonFootprintScore() {
       <CardDescription>Estadisticas</CardDescription>
         <CardTitle>Puntaje Huella de Carbono</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-1 items-center pb-0">
+      <CardContent className="flex flex-1 items-center justify-center pt-2 pb-6">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto w-[300px] h-[300px] border"
+          className="mx-auto w-[220px] h-[220px]"
         >
           <RadialBarChart
             data={chartData}
@@ -67,28 +67,28 @@ export function CarbonFootprintScore() {
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) - 16}
-                          className="fill-foreground text-2xl font-bold"
+                          className="fill-[#1C1C35] text-5xl font-extrabold"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 4}
-                          className="fill-foreground font-bold"
+                          className="fill-[#1C1C35] font-medium"
                         >
                             Tu puntaje es
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 25}
-                          className="fill-muted-foreground"
+                          className="fill-[#9CA3AF] text-sm"
                         >
                           Actualizacion Nov
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 39}
-                          className="fill-muted-foreground"
+                          className="fill-[#9CA3AF] text-sm"
                         >
                             24, 2022
                         </tspan>
