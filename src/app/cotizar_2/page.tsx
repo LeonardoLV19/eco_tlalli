@@ -1,5 +1,6 @@
 "use client";
 
+
 import EnergyChartCard2 from '@/components/consumo2/consumo2';
 import { ProductCardVariant } from '@/components/MarketplaceComponents/ProductCard/ProductCard';
 import TablaCotizacionV1 from '@/components/TablaCotizacion/TablaCotizacionV1';
@@ -71,8 +72,11 @@ const Page = () => {
           <TablaCotizacionV1 />
         </div>
       </div>
+
     </div>
   );
 };
 
+
 export default Page;
+

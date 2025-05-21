@@ -33,14 +33,14 @@ const chartData = [
 
 export function SpendingByCategory() {
     return (
-      <Card className="w-fit mx-auto">
+      <Card className="w-full mx-auto">
         <CardHeader>
           <CardTitle className="font-bold text-2xl">Gasto por Categoría</CardTitle>
         </CardHeader>
   
         <CardContent>
           {/* Contenedor con tamaño controlado */}
-          <div className="w-[650px] h-[550px]">
+          <div className="w-[250px] h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} barSize={14} barCategoryGap={20}>
                 <CartesianGrid stroke="#e5e7eb" strokeDasharray="4 4" vertical={false} />
