@@ -48,6 +48,13 @@ const TablaCotizacionV2 = () => {
           <p className="font-bold text-green-600">42 MXN</p>
         </div>
       </div>
+
+      {/* Botón centrado */}
+      <div className="flex justify-center pb-6">
+        <button className="px-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+          Contacta con EcoTlalli
+        </button>
+      </div>
     </div>
   );
 };
