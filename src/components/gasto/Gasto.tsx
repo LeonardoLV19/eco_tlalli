@@ -39,7 +39,7 @@ const energyData = [
   { month: "Sep", Futuro: 80, Actual: 130, Promedio: 330 },
   { month: "Oct", Futuro: 154, Actual: 188, Promedio: 290 },
   { month: "Nov", Futuro: 100, Actual: 135, Promedio: 200 },
-  { month: "Dic", Futuro: 250, Actual: 170, Promedio: 340 },
+  { month: "Dic", Futuro: 130, Actual: 170, Promedio: 340 },
 ]
 
 const chartConfig = {
@@ -97,6 +97,7 @@ export default function EnergyLineChartCard() {
                   domain={[0, 350]}
                   interval={0}
                   ticks={[...Array(8).keys()].map(i => i * 50)}
+                  tickFormatter={(value) => `${value / 1000}k`}
                 />
                 <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
                 <Line dataKey="Futuro" type="monotone" stroke="#258429" strokeWidth={2} dot={false} />
