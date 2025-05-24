@@ -62,6 +62,12 @@ const cotizar_3 = () => {
       <div className="w-full px-4 -translate-y-30">
         <TablaCotizacionV2 />
       </div>
+
+      <div className="w-full px-4 -translate-y-20 justify-center flex">
+        <button className="px-6 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+          Descargar informe en PDF
+        </button>
+      </div>
     </div>
   );
 };
